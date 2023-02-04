@@ -1,0 +1,110 @@
+@use "./base";
+
+@mixin flex-box($flex-direction, $justify-content, $align-items){
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+@mixin Fraunces{
+    font-family: 'Fraunces', serif;
+}
+
+$shaaq-dark_brown: #3A2D28;
+$shaaq-brown: #A48374;
+$shaaq-beige: #CBAD8D;
+$shaaq-grey: #D1C7BD;
+$shaaq-light_grey: #EBE3DB;
+$shaaq-white: #F1EDE6;
+
+.App{
+    background: linear-gradient(180deg, rgba(241,237,230,1) 0%, rgba(238,225,211,1) 100%);
+    
+    width: 100vw;
+    height: 100vh;
+}
+
+html, body, .container, .panel{
+    height: 100%;
+    
+}
+
+header{
+    width: 100vw;
+    height: 4rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+
+    background-color: lightseagreen;
+}
+
+header button{
+    width: 3rem;
+    height: 3rem;
+
+    background-color: green;
+    border-style: none;
+}
+
+.progress-circle{
+    position: absolute;
+    left: 0;
+    
+    background-color: lightcoral;
+    width: 10px;
+    height: 10px;
+    z-index: 3;
+}
+
+
+body{
+    overscroll-behavior: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin: 0;
+   
+}
+body::-webkit-scrollbar {
+    width: 0;
+    opacity: 0;
+  }
+  
+.container {
+    overscroll-behavior: none;
+    width: 300%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+
+  }
+
+
+  .panel{
+    width: 100%;
+    font-weight: 700;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.one{
+background-color: lightcoral;
+}
+
+.two{
+    background-color: lightblue;
+}
+
+.three{
+background-color: lightgoldenrodyellow;
+}
+
+.pin-spacer{
+    display: none;
+}

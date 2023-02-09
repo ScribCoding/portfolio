@@ -1,7 +1,7 @@
-const Panel = ({className}) =>{ 
+const Panel = ({className, content}) =>{ 
 return(
 <section className={className}>
-    <div> hi</div>
+    {content}
 </section>
 )
 }

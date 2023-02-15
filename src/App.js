@@ -10,6 +10,8 @@ import Portfolio from './components/Portfolio';
 import ContactForm from './components/ContactForm';
 import About from './components/About';
 
+
+
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 
@@ -36,16 +38,35 @@ function App() {
     {y: container.current.offsetWidth}})
     
   }
-
-
+  
 
   
 //------VARIABLES & FUNCTIONS END------------------//
   useLayoutEffect(()=>{
+  
+  document.querySelector(".about_button").addEventListener("click",scrollToHome);
+  document.querySelector(".portfolio_button").addEventListener("click",scrollToPortfolio);
+  document.querySelector(".contactForm_button").addEventListener("click",scrollToContact);
+//--------------header button events-------------------------//
 
+let hiImAnim = gsap.timeline();
+hiImAnim
+.to(".hi",  {strokeDashoffset:"0", duration: "0.5"}, )
+.to(".hi",  {strokeDashoffset:"-800", delay:"0.5"}, )
+.to(".im",  {strokeDashoffset:"0", duration: "0.5"}, )
+.to(".im",  {strokeDashoffset:"-1000", delay:"0.5"}, )
+.to(".name",  {strokeDashoffset:"0", duration: "3"} )
+.to(".name",  { fillOpacity: 1, strokeOpacity: 0},"-=2" )
+.fromTo(".github-logo",{opacity: 0, y:"0"},{opacity: 1, y:"-50"},"-=0.9")
+
+//-----------------gsap about animations-------------------------------//
+
+    
     let sections = gsap.utils.toArray(container.current.children);
+    
     let containerContext = gsap.context(()=>{
       let scrollSections = gsap.to(sections, {
+
         xPercent: -100 * (sections.length - 1),
         ease: "none",
           scrollTrigger: {
@@ -64,23 +85,20 @@ function App() {
         }
       }); 
     },container.current)
-
+      
 //-----------------------MAIN CONTAINER ANIMATION---------------------------------------//
-
-    
     let headerContext = gsap.context(()=>{
     let progressCircle = document.querySelector(".progress-circle");
     let progressBarLength = document.querySelector(".progress-container").offsetWidth;
-    console.log(containerContext.data[0].totalProgress())
+    
 
       let progressBar = gsap.to(progressCircle, {
         onUpdate: function(){
-          console.log(this.totalProgress())
+          
         },
         x: progressBarLength,
         ease: "none",
           scrollTrigger: {
-            markers: true,
             invalidateOnRefresh: true,
             containerAnimation: containerContext.data[0],
             trigger: document.querySelector(".one"),
@@ -105,7 +123,8 @@ function App() {
 
 //-----------------------PROGRESS CIRCLE---------------------------------------//
 
-let boxes = gsap.utils.toArray(portfolio_container.current.children);
+let boxes = gsap.utils.toArray(portfolio_container.current.children[0].children);
+console.log(boxes)
 let portfolioContext = gsap.context(()=>{
   let portfolioAnim = gsap.from(boxes,{
     y: 100,
@@ -122,11 +141,31 @@ let portfolioContext = gsap.context(()=>{
       trigger: portfolio_container.current,
     }
   });
-},portfolio_container.current)
 
+  let portfolioTextAnim = gsap.timeline(
+    {     
+      scrollTrigger: {
+        containerAnimation: containerContext.data[0],
+        trigger: portfolio_container.current,
+        scrub: true,
+        start: "-20% center",
+        end: "center center",
+        markers: true
+      }
+  }
+    );
+  portfolioTextAnim
+  .to(".previous",  {strokeDashoffset:"0", duration:"2" }, )
+  .to(".work",  {strokeDashoffset:"0", duration:"2" }, "<" )
+  .to(".previous",  {fillOpacity: 1, strokeOpacity: 0},)
+  .to(".work",  {fillOpacity: 1, strokeOpacity: 0}, "<" )
+  //background-text associated with portfolio panel
+
+},portfolio_container.current)
 //-----------------------Portfolio Context----------------------------------------------//
 
-let form = gsap.utils.toArray(contactForm_container.current.children);
+let form = gsap.utils.toArray(contactForm_container.current.children[0]);
+console.log(form)
 let contactFormContext = gsap.context(()=>{
   let contactFormAnim = gsap.from(form,{
     y: 100,
@@ -140,15 +179,36 @@ let contactFormContext = gsap.context(()=>{
     scrollTrigger: {
       containerAnimation: containerContext.data[0],
       trigger: contactForm_container.current,
-
-      toggleActions: "play none none reverse"
     }
   });
+
+  let portfolioTextAnim = gsap.timeline(
+    {     
+      scrollTrigger: {
+        containerAnimation: containerContext.data[0],
+        trigger: contactForm_container.current,
+        scrub: true,
+        start: "-20% center",
+        end: "center center",
+        markers: true
+      }
+  }
+    );
+  portfolioTextAnim
+  .to(".contact",  {strokeDashoffset:"0", duration:"2" }, )
+  .to(".form",  {strokeDashoffset:"0", duration:"2" }, "<" )
+  .to(".contact",  {fillOpacity: 1, strokeOpacity: 0}, )
+  .to(".form",  {fillOpacity: 1, strokeOpacity: 0}, "<" )
+  //background-text associated with portfolio panel  
+
+
+
 },contactForm_container.current)
 
 
 //-----------------------Contact Context----------------------------------------------//
     return () => {
+
       contactFormContext.revert();
       portfolioContext.revert();
       containerContext.revert();
@@ -158,6 +218,7 @@ let contactFormContext = gsap.context(()=>{
     
 
   },[])
+
 //------------------------------GSAP---------------------------------------//
 
 
@@ -165,8 +226,8 @@ let contactFormContext = gsap.context(()=>{
     
     <div className="App">
       <div id="body">
-        <Header button1={scrollToHome} button2={scrollToPortfolio} button3= {scrollToContact} reference = {header_container}/>
         <section className="scroll">
+        <Header button1={scrollToHome} button2={scrollToPortfolio} button3= {scrollToContact} reference = {header_container}/>
           <div className="container" id="container" ref={container}>
             <Panel className={"panel one"} id="about" content={<About reference={about_container}/>}/>
             <Panel className={"panel two"}id="portfolio" content={<Portfolio reference={portfolio_container}/>}/>

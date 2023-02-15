@@ -1,6 +1,7 @@
 @use "./portfolio";
 @use "./contact-form";
 @use "./base";
+@use "./about";
 
 
 @mixin flex-box($flex-direction, $justify-content, $align-items){
@@ -19,10 +20,10 @@ $shaaq-beige: #CBAD8D;
 $shaaq-grey: #D1C7BD;
 $shaaq-light_grey: #EBE3DB;
 $shaaq-white: #F1EDE6;
+$shaaq-black: #000000;
 
 .App{
     background: linear-gradient(180deg, rgba(241,237,230,1) 0%, rgba(238,225,211,1) 100%);
-    
     width: 100vw;
     height: 100vh;
 }
@@ -30,6 +31,19 @@ $shaaq-white: #F1EDE6;
 html, body, .container, .panel{
     max-height: 100vh;
     
+}
+
+.name_animation_container{
+    height: 100vh;
+    width: 100%;
+    font-weight: 700;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3A2D28;
+    position: absolute;
+    z-index: 20;
 }
 
 header{
@@ -43,26 +57,48 @@ header{
     position: fixed;
     z-index: 2;
 
-    background-color: lightseagreen;
+    background-color: $shaaq-light_grey;
 
     .progress-container{
-        background-color: red;
+        background-color: $shaaq-light_grey;
         width: 40rem;
         height: 100%;
 
         @include flex-box(row, space-between, center)
     }
+
+    button{
+        width: 3rem;
+        height: 3rem;
     
+        
+        border-style: none;
+    }
 
+    .about_button{
+        width: 4rem;
+        height: 4rem;
+        
+        background-image: url(/design_elements/Logo/AJ_logo_no_dot.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .portfolio_button{
+        width: 3rem;
+        height: 3rem;
+        background-color: $shaaq-dark_brown;
+    }
+
+    .contactForm_button{
+        width: 3rem;
+        height: 3rem;
+        background-color: $shaaq-dark_brown;
+    }
 }
 
-header button{
-    width: 3rem;
-    height: 3rem;
 
-    background-color: green;
-    border-style: none;
-}
 
 
 
@@ -70,8 +106,11 @@ header button{
 .progress-circle{
     position: relative;
     
-    
-    background-color: lightcoral;
+    background-color: black;
+
+    left: 2.45rem;
+    top: 10px;
+    border-radius: 50%;
     width: 10px;
     height: 10px;
     z-index: 3;

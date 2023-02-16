@@ -2,7 +2,7 @@
 @use "./contact-form";
 @use "./base";
 @use "./about";
-
+@use "./variables";
 
 @mixin flex-box($flex-direction, $justify-content, $align-items){
     display: flex;
@@ -14,13 +14,7 @@
     font-family: 'Fraunces', serif;
 }
 
-$shaaq-dark_brown: #3A2D28;
-$shaaq-brown: #A48374;
-$shaaq-beige: #CBAD8D;
-$shaaq-grey: #D1C7BD;
-$shaaq-light_grey: #EBE3DB;
-$shaaq-white: #F1EDE6;
-$shaaq-black: #000000;
+
 
 .App{
     background: linear-gradient(180deg, rgba(241,237,230,1) 0%, rgba(238,225,211,1) 100%);
@@ -41,7 +35,7 @@ html, body, .container, .panel{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #3A2D28;
+    background-color: variables.$shaaq-tertiary;
     position: absolute;
     z-index: 20;
 }
@@ -57,11 +51,11 @@ header{
     position: fixed;
     z-index: 2;
 
-    background-color: $shaaq-light_grey;
+    background-color: variables.$shaaq-white;
+    border: solid 2px black;
 
     .progress-container{
-        background-color: $shaaq-light_grey;
-        width: 40rem;
+        width: 80%;
         height: 100%;
 
         @include flex-box(row, space-between, center)
@@ -88,13 +82,13 @@ header{
     .portfolio_button{
         width: 3rem;
         height: 3rem;
-        background-color: $shaaq-dark_brown;
+        background-color: variables.$shaaq-dark_purple;
     }
 
     .contactForm_button{
         width: 3rem;
         height: 3rem;
-        background-color: $shaaq-dark_brown;
+        background-color: variables.$shaaq-dark_purple;
     }
 }
 
@@ -149,15 +143,15 @@ body::-webkit-scrollbar {
 }
 
 .one{
-background-color: $shaaq-beige;
+background-color: variables.$shaaq-primary;
 }
 
 .two{
-    background-color: $shaaq-brown;
+    background-color: variables.$shaaq-secondary;
 }
 
 .three{
-background-color: $shaaq-dark_brown;
+background-color: variables.$shaaq-tertiary;
 }
 
 .pin-spacer{

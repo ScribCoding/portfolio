@@ -1,9 +1,12 @@
+@use "./variables";
+
+
 .portfolio-container{
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 
     display: flex;
-   
+    
 }
 
 .portfolio-items{
@@ -21,15 +24,122 @@
 
 }
 
-.portfolio-item{
-    width: 200px;
-    height: 200px;
+.portfolio-button{
+    width: 12rem;
+    height: 12rem;
 
+    border-radius: 50%;
     justify-self: center;
 
-    background-color: lightgray;
+    background-color: variables.$shaaq-white;
    
 }
+
+.visible{
+    display: flex;
+}
+
+.hidden{
+    display: none;
+}
+
+.portfolio-list-container{
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    z-index: 3;
+    
+
+    justify-content: center;
+    align-items: center;
+
+    .portfolio-list{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(auto, 1fr);
+
+        max-width: 60rem;
+        min-width: 60rem;
+        height: 50rem;
+        min-height: 20rem;
+
+        margin-top: 50%;
+        margin-bottom: 50%;
+
+        border: 3px solid black;
+        border-radius: 5px;
+        z-index: 3;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        
+        background-color: variables.$shaaq-white;
+        
+
+        .portfolio-data-item{
+           justify-self: center;
+           align-self: center;
+
+           display: grid;
+           grid-template-columns: repeat(3, 33%);
+           grid-template-rows: repeat(1, 1fr);
+           grid-template-areas: "names description buttons";
+           
+
+           width: 100%;
+           height: 8rem;
+           
+           border-bottom: 2px solid variables.$shaaq-black;
+           background-color: variables.$shaaq-white;
+           overflow: hidden;
+
+           .data-item-name{
+            grid-area: names;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           }
+
+           .data-item-description{
+            grid-area: description;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           }
+
+           .data-item-buttons{
+            grid-area: buttons;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           }
+
+
+
+           a{
+            color: variables.$shaaq-black;
+            font-size: 0.9rem;
+            text-decoration: none;
+           }
+        }
+    }
+
+
+    .portfolio-list-background{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 2;
+        background-color: variables.$shaaq-secondary;
+        opacity: 90%;
+    }
+}
+
+
+
 
 .previous-text-container{
     position: relative;

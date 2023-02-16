@@ -18,6 +18,11 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 function App() {
 
+  const [dataArray, setDataArray] = useState([])
+
+
+
+
   const about_container = useRef();
   const portfolio_container = useRef();
   const container = useRef();
@@ -43,7 +48,13 @@ function App() {
   
 //------VARIABLES & FUNCTIONS END------------------//
   useLayoutEffect(()=>{
-  
+    async function getData(){
+      let data = await (await fetch("https://api.github.com/users/ScribCoding/repos")).json()
+      
+      setDataArray(data);
+    }
+    getData();
+
   document.querySelector(".about_button").addEventListener("click",scrollToHome);
   document.querySelector(".portfolio_button").addEventListener("click",scrollToPortfolio);
   document.querySelector(".contactForm_button").addEventListener("click",scrollToContact);
@@ -88,21 +99,25 @@ hiImAnim
       
 //-----------------------MAIN CONTAINER ANIMATION---------------------------------------//
     let headerContext = gsap.context(()=>{
-    let progressCircle = document.querySelector(".progress-circle");
-    let progressBarLength = document.querySelector(".progress-container").offsetWidth;
-    
+      let progressCircle = document.querySelector(".progress-circle");
+      
+      let buttonOne = document.querySelector(".about_button")
+      let buttonTwo = document.querySelector(".portfolio_button")
+      let buttonThree = document.querySelector(".contactForm_button")
 
+      let navEnd = buttonThree.getBoundingClientRect().left - buttonOne.getBoundingClientRect().left - buttonThree.getBoundingClientRect().width/2;
       let progressBar = gsap.to(progressCircle, {
         onUpdate: function(){
           
         },
-        x: progressBarLength,
+
+        x: navEnd,
         ease: "none",
           scrollTrigger: {
+            markers: true,
             invalidateOnRefresh: true,
             containerAnimation: containerContext.data[0],
             trigger: document.querySelector(".one"),
-            pinspacing: false,
             scrub: 0.8,
             start: `start start`,
             end: () => "+=" + container.current.offsetWidth*2/3
@@ -112,19 +127,22 @@ hiImAnim
       window.addEventListener("resize", ()=>{
         if(window.body.offsetWidth !== undefined){
           //changes the progress length of the progress tracker
-          progressBar.vars.x = document.querySelector(".progress-container").offsetWidth;
+          progressBar.vars.x = buttonThree.getBoundingClientRect().left - buttonOne.getBoundingClientRect().left - buttonThree.getBoundingClientRect().width/2;
+          
           //resets the progress to 0 so that overall container isn't affected by the window resize
           gsap.to(window,{duration: 0.2, scrollTo:
             {y: 0}})
+            
         }
+        
       });
 
     },header_container.current)
 
 //-----------------------PROGRESS CIRCLE---------------------------------------//
 
-let boxes = gsap.utils.toArray(portfolio_container.current.children[0].children);
-console.log(boxes)
+let boxes = gsap.utils.toArray(portfolio_container.current.children[1].children);
+
 let portfolioContext = gsap.context(()=>{
   let portfolioAnim = gsap.from(boxes,{
     y: 100,
@@ -150,7 +168,6 @@ let portfolioContext = gsap.context(()=>{
         scrub: true,
         start: "-20% center",
         end: "center center",
-        markers: true
       }
   }
     );
@@ -165,7 +182,7 @@ let portfolioContext = gsap.context(()=>{
 //-----------------------Portfolio Context----------------------------------------------//
 
 let form = gsap.utils.toArray(contactForm_container.current.children[0]);
-console.log(form)
+
 let contactFormContext = gsap.context(()=>{
   let contactFormAnim = gsap.from(form,{
     y: 100,
@@ -190,7 +207,7 @@ let contactFormContext = gsap.context(()=>{
         scrub: true,
         start: "-20% center",
         end: "center center",
-        markers: true
+
       }
   }
     );
@@ -230,7 +247,7 @@ let contactFormContext = gsap.context(()=>{
         <Header button1={scrollToHome} button2={scrollToPortfolio} button3= {scrollToContact} reference = {header_container}/>
           <div className="container" id="container" ref={container}>
             <Panel className={"panel one"} id="about" content={<About reference={about_container}/>}/>
-            <Panel className={"panel two"}id="portfolio" content={<Portfolio reference={portfolio_container}/>}/>
+            <Panel className={"panel two"}id="portfolio" content={<Portfolio reference={portfolio_container} data={dataArray}/>}/>
             <Panel className={"panel three"} id="contact-form" content={<ContactForm reference={contactForm_container}/>}/>
           </div>
         </section>

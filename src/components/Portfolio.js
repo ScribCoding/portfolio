@@ -1,11 +1,33 @@
-const Portfolio = ({reference}) =>{
+import PortfolioButton from "./PortfolioButton";
+import PortfolioList from "./PortfolioList";
+import PortfolioDataItem from "./PortfolioDataItem";
+
+const Portfolio = ({reference, data}) =>{
+
+    console.log(data)
+    let dataArrayElements = data.map((item, index)=>{
+        let baseUrl = `https://scribcoding.github.io/${item.name}/`
+        return (
+            <PortfolioDataItem 
+            key={index} 
+            name={item.name} 
+            pagesURL={baseUrl} 
+            sourceURL={item.svn_url} 
+            description={item.description}
+            />
+            )
+    });
+
+
+
     return(
         <section className="portfolio-container" ref={reference}>
-            
+            <PortfolioList content={dataArrayElements}/>
+
             <div className="portfolio-items">
-                <div className="portfolio-item"></div>
-                <div className="portfolio-item"></div>
-                <div className="portfolio-item"></div>
+                <PortfolioButton className="javascript" id="javascript"/>
+                <PortfolioButton className="css" id="css"/>
+                <PortfolioButton className="general" id="general"/>
             </div>
 
         <div className="background-text-container">

@@ -68,7 +68,6 @@ hiImAnim
 .to(".im",  {strokeDashoffset:"-1000", delay:"0.5"}, )
 .to(".name",  {strokeDashoffset:"0", duration: "3"} )
 .to(".name",  { fillOpacity: 1, strokeOpacity: 0},"-=2" )
-.fromTo(".github-logo",{opacity: 0, y:"0"},{opacity: 1, y:"-50"},"-=0.9")
 
 //-----------------gsap about animations-------------------------------//
 
@@ -102,6 +101,7 @@ hiImAnim
       let progressCircle = document.querySelector(".progress-circle");
       
       let buttonOne = document.querySelector(".about_button")
+      let buttonOneIcon = header_container.current.children[0].children[1].children[0]
       let buttonTwo = document.querySelector(".portfolio_button")
       let buttonThree = document.querySelector(".contactForm_button")
 
@@ -118,7 +118,7 @@ hiImAnim
             invalidateOnRefresh: true,
             containerAnimation: containerContext.data[0],
             trigger: document.querySelector(".one"),
-            scrub: 0.8,
+            scrub: true,
             start: `start start`,
             end: () => "+=" + container.current.offsetWidth*2/3
         }
@@ -184,22 +184,22 @@ let portfolioContext = gsap.context(()=>{
 let form = gsap.utils.toArray(contactForm_container.current.children[0]);
 
 let contactFormContext = gsap.context(()=>{
-  let contactFormAnim = gsap.from(form,{
-    y: 100,
-    opacity: 0,
-    duration: 0.5,
-    ease: "back",
-    stagger: {
-     each: 0.1,
-     from: "start",
-    },
-    scrollTrigger: {
-      containerAnimation: containerContext.data[0],
-      trigger: contactForm_container.current,
-    }
-  });
+  // let contactFormAnim = gsap.from(form,{
+  //   y: 100,
+  //   opacity: 0,
+  //   duration: 0.5,
+  //   ease: "back",
+  //   stagger: {
+  //    each: 0.1,
+  //    from: "start",
+  //   },
+  //   scrollTrigger: {
+  //     containerAnimation: containerContext.data[0],
+  //     trigger: contactForm_container.current,
+  //   }
+  // });
 
-  let portfolioTextAnim = gsap.timeline(
+  let contactFormTextAnim = gsap.timeline(
     {     
       scrollTrigger: {
         containerAnimation: containerContext.data[0],
@@ -211,7 +211,7 @@ let contactFormContext = gsap.context(()=>{
       }
   }
     );
-  portfolioTextAnim
+  contactFormTextAnim
   .to(".contact",  {strokeDashoffset:"0", duration:"2" }, )
   .to(".form",  {strokeDashoffset:"0", duration:"2" }, "<" )
   .to(".contact",  {fillOpacity: 1, strokeOpacity: 0}, )

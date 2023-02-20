@@ -1,11 +1,35 @@
-import PortfolioButton from "./PortfolioButton";
+import DisplayButton from "./DisplayButton";
 import PortfolioList from "./PortfolioList";
 import PortfolioDataItem from "./PortfolioDataItem";
 
 const Portfolio = ({reference, data}) =>{
 
-    console.log(data)
-    let dataArrayElements = data.map((item, index)=>{
+    let dataGeneral = data;
+
+    let dataCSS = data.filter((item,index)=>{
+        return item.language === "CSS";
+    })
+
+    let dataJavascript = data.filter((item,index)=>{
+        return item.language === "JavaScript";
+    })
+
+
+    let dataArrayElementsGeneral = dataGeneral.map((item, index)=>{
+        let baseUrl = `https://scribcoding.github.io/${item.name}/`
+        return (
+            <PortfolioDataItem 
+            key={index} 
+            name={item.name} 
+            pagesURL={baseUrl} 
+            sourceURL={item.svn_url}
+            description={item.description}
+            language={item.language}
+            />
+            )
+    });
+
+    let dataArrayElementsCSS = dataCSS.map((item, index)=>{
         let baseUrl = `https://scribcoding.github.io/${item.name}/`
         return (
             <PortfolioDataItem 
@@ -14,37 +38,53 @@ const Portfolio = ({reference, data}) =>{
             pagesURL={baseUrl} 
             sourceURL={item.svn_url} 
             description={item.description}
+            language={item.language}
+            />
+            )
+    });
+    
+    let dataArrayElementsJavascript = dataJavascript.map((item, index)=>{
+        let baseUrl = `https://scribcoding.github.io/${item.name}/`
+        return (
+            <PortfolioDataItem 
+            key={index} 
+            name={item.name} 
+            pagesURL={baseUrl} 
+            sourceURL={item.svn_url} 
+            description={item.description}
+            language={item.language}
             />
             )
     });
 
 
-
     return(
         <section className="portfolio-container" ref={reference}>
-            <PortfolioList content={dataArrayElements}/>
+            <PortfolioList content={dataArrayElementsGeneral} id="portfolio-list-general"/>
+            <PortfolioList content={dataArrayElementsCSS} id="portfolio-list-css"/>
+            <PortfolioList content={dataArrayElementsJavascript} id="portfolio-list-javascript"/>
 
             <div className="portfolio-items">
-                <PortfolioButton className="javascript" id="javascript"/>
-                <PortfolioButton className="css" id="css"/>
-                <PortfolioButton className="general" id="general"/>
+                <DisplayButton className="javascript" id="javascript" contentType={"portfolio"} content="javascript"/>
+                <DisplayButton className="css" id="css" contentType={"portfolio"} content="css"/>
+                <DisplayButton className="general" id="general" contentType={"portfolio"} content="general"/>
             </div>
 
-        <div className="background-text-container">
+            <div className="background-text-container">
 
-        <svg className="previous-text-container">
-            <text className="sub-text" x="0" y="100%" fill="" stroke="#000000" strokeWidth="2">
-          <tspan className="tp previous">previous</tspan>
-            </text>
-        </svg>
+                <svg className="previous-text-container">
+                    <text className="sub-text" x="0" y="100%" fill="" stroke="#000000" strokeWidth="2">
+                        <tspan className="tp previous">previous</tspan>
+                    </text>
+                </svg>
 
-        <svg className="work-text-container">
-            <text className="sub-text" x="0" y="100%" fill="" stroke="#000000" strokeWidth="2">
-          <tspan className="tp work">work</tspan>
-            </text>
-        </svg>
+                <svg className="work-text-container">
+                    <text className="sub-text" x="0" y="100%" fill="" stroke="#000000" strokeWidth="2">
+                        <tspan className="tp work">work</tspan>
+                    </text>
+                </svg>
 
-        </div>
+            </div>
         
         
         

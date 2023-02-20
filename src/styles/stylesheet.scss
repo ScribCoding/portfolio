@@ -14,7 +14,13 @@
     font-family: 'Fraunces', serif;
 }
 
+*{
+  box-sizing: border-box;  
+}
 
+button{
+    cursor: pointer;
+}
 
 .App{
     background: linear-gradient(180deg, rgba(241,237,230,1) 0%, rgba(238,225,211,1) 100%);
@@ -40,7 +46,7 @@ html, body, .container, .panel{
     z-index: 20;
 }
 
-header{
+.header-container{
     width: 100vw;
     height: 4rem;
 
@@ -51,7 +57,7 @@ header{
     position: fixed;
     z-index: 2;
 
-    background-color: variables.$shaaq-white;
+    background-color: variables.$shaaq-light_purple;
     border: solid 2px black;
 
     .progress-container{
@@ -80,15 +86,26 @@ header{
     }
 
     .portfolio_button{
-        width: 3rem;
-        height: 3rem;
-        background-color: variables.$shaaq-dark_purple;
+        width: 4rem;
+        height: 4rem;
+       
+        .header-palette-icon{
+            position: relative;
+            top: 2px;
+            transform: rotate(200deg) scale(0.9);
+            
+        }
     }
 
     .contactForm_button{
         width: 3rem;
         height: 3rem;
-        background-color: variables.$shaaq-dark_purple;
+
+        .header-person-icon{
+            position: relative;  
+            right: 7%;
+            
+        }
     }
 }
 
@@ -156,4 +173,16 @@ background-color: variables.$shaaq-tertiary;
 
 .pin-spacer{
     display: none;
+}
+
+.display-button{
+    width: 12rem;
+    height: 12rem;
+
+    border-radius: 100%;
+    justify-self: center;
+    align-self: center;
+    border: 3px solid black;
+    background-color: variables.$shaaq-light_purple;
+   
 }

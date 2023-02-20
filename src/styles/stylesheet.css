@@ -11,6 +11,24 @@
   display: flex;
 }
 
+#javascript {
+  background-image: url(/design_elements/portoflio-list-elements/pencil.svg);
+  background-position: center;
+  background-size: 100%;
+}
+
+#css {
+  background-image: url(/design_elements/portoflio-list-elements/paint-brush-icon.svg);
+  background-position: center;
+  background-size: 100%;
+}
+
+#general {
+  background-image: url(/design_elements/portoflio-list-elements/fountain-pen-icon.svg);
+  background-position: center bottom;
+  background-size: 100%;
+}
+
 .portfolio-items {
   width: 100%;
   height: 100%;
@@ -20,14 +38,6 @@
   justify-self: center;
   align-items: center;
   z-index: 2;
-}
-
-.portfolio-button {
-  width: 12rem;
-  height: 12rem;
-  border-radius: 50%;
-  justify-self: center;
-  background-color: #c9ccc9;
 }
 
 .visible {
@@ -47,23 +57,56 @@
   align-items: center;
 }
 .portfolio-list-container .portfolio-list {
+  height: 40rem;
+  z-index: 3;
+  max-width: 60rem;
+  min-width: 60rem;
+  min-height: 20rem;
+}
+.portfolio-list-container .portfolio-list .portfolio-list-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 3px solid #000000;
+  border-bottom: none;
+  background-color: #a7a4e0;
+  z-index: 4;
+}
+.portfolio-list-container .portfolio-list .portfolio-list-header .portfolio-header-exit-button {
+  position: relative;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 2.8px solid #000000;
+  background-image: url("/design_elements/portoflio-list-elements/x.svg");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 3px 3px;
+}
+.portfolio-list-container .portfolio-list .portfolio-list-header .portfolio-header-exit-button:hover {
+  top: 3px;
+  left: 3px;
+  box-shadow: 0px 0px;
+}
+.portfolio-list-container .portfolio-list .portfolio-list-content {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(auto, 1fr);
-  max-width: 60rem;
-  min-width: 60rem;
-  height: 50rem;
-  min-height: 20rem;
-  margin-top: 50%;
-  margin-bottom: 50%;
+  width: 100%;
+  height: 100%;
   border: 3px solid black;
-  border-radius: 5px;
   z-index: 3;
   overflow-y: scroll;
   overflow-x: hidden;
   background-color: #c9ccc9;
 }
-.portfolio-list-container .portfolio-list .portfolio-data-item {
+.portfolio-list-container .portfolio-list .portfolio-list-content .portfolio-data-item {
   justify-self: center;
   align-self: center;
   display: grid;
@@ -72,30 +115,71 @@
   grid-template-areas: "names description buttons";
   width: 100%;
   height: 8rem;
-  border-bottom: 2px solid #111111;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-bottom: 2px solid #000000;
   background-color: #c9ccc9;
   overflow: hidden;
 }
-.portfolio-list-container .portfolio-list .portfolio-data-item .data-item-name {
+.portfolio-list-container .portfolio-list .portfolio-list-content .portfolio-data-item .data-item-name {
   grid-area: names;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  overflow: hidden;
 }
-.portfolio-list-container .portfolio-list .portfolio-data-item .data-item-description {
+.portfolio-list-container .portfolio-list .portfolio-list-content .portfolio-data-item .data-item-description {
+  font-size: 80%;
   grid-area: description;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
-.portfolio-list-container .portfolio-list .portfolio-data-item .data-item-buttons {
+.portfolio-list-container .portfolio-list .portfolio-list-content .portfolio-data-item .data-item-buttons {
   grid-area: buttons;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
-.portfolio-list-container .portfolio-list .portfolio-data-item a {
-  color: #111111;
+.portfolio-list-container .portfolio-list .portfolio-list-content .portfolio-data-item .data-item-buttons .webpage {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  background-color: #a7a4e0;
+  background-image: url("/design_elements/portoflio-list-elements/icon_file_text_.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  border: 2.8px solid black;
+  box-shadow: 3px 3px;
+}
+.portfolio-list-container .portfolio-list .portfolio-list-content .portfolio-data-item .data-item-buttons .webpage:hover {
+  top: 3px;
+  left: 3px;
+  box-shadow: 0px 0px;
+}
+.portfolio-list-container .portfolio-list .portfolio-list-content .portfolio-data-item .data-item-buttons .source-code {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  background-color: #a7a4e0;
+  background-image: url("/design_elements/portoflio-list-elements/source_github_logo_.svg");
+  background-position: 60%;
+  background-repeat: no-repeat;
+  background-size: 90%;
+  border: 2.8px solid black;
+  box-shadow: 3px 3px;
+}
+.portfolio-list-container .portfolio-list .portfolio-list-content .portfolio-data-item .data-item-buttons .source-code:hover {
+  top: 3px;
+  left: 3px;
+  box-shadow: 0px 0px;
+}
+.portfolio-list-container .portfolio-list .portfolio-list-content .portfolio-data-item a {
+  color: #000000;
   font-size: 0.9rem;
   text-decoration: none;
 }
@@ -144,48 +228,147 @@
   display: flex;
   justify-content: center;
 }
-.contact-form_container article {
-  display: flex;
+.contact-form_container .email-button {
+  background-image: url(/design_elements/portoflio-list-elements/mail-icon.svg);
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.contact-form_container .email-box {
+  height: 30rem;
+  z-index: 3;
+  max-width: 50rem;
+  min-width: 50rem;
+  min-height: 30rem;
+  z-index: 3;
+}
+.contact-form_container .email-container {
+  position: absolute;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.contact-form_container .email-container .email-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 3px solid #000000;
+  border-bottom: none;
+  background-color: #a7a4e0;
+  z-index: 4;
+}
+.contact-form_container .email-container .email-header .contact-header-exit-button {
+  position: relative;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 2.8px solid #000000;
+  background-image: url("/design_elements/portoflio-list-elements/x.svg");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 3px 3px;
+}
+.contact-form_container .email-container .email-header .contact-header-exit-button:hover {
+  top: 3px;
+  left: 3px;
+  box-shadow: 0px 0px;
+}
+.contact-form_container .email-container .email-content {
+  width: 100%;
+  height: 100%;
+  background-color: #c9ccc9;
+  border: 3px solid black;
+  z-index: 3;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.contact-form_container .email-container .email-content form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+.contact-form_container .email-container .contact-form-background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #54585a;
+  opacity: 90%;
+  z-index: 0;
 }
 
 .contact-form_input {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  row-gap: 1rem;
+  row-gap: 2.5rem;
+  padding: 1rem;
 }
 .contact-form_input .form {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 1.5rem;
-  border-radius: 0.5rem;
   padding: 0.5rem;
 }
-.contact-form_input .input-button-container {
-  display: flex;
-  flex-direction: row;
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
-}
-.contact-form_input .input-button-container button {
+.contact-form_input .send-button {
+  position: relative;
+  height: 2.5rem;
   width: 8.5rem;
+  align-self: center;
+  background-color: #a7a4e0;
+  box-shadow: 3px 3px;
 }
-.contact-form_input .input-container {
+.contact-form_input .send-button:hover {
+  top: 3px;
+  left: 3px;
+  box-shadow: 0px 0px;
+}
+
+.input-container {
   display: flex;
   flex-direction: column;
   row-gap: 0.5rem;
+  width: 100%;
 }
-.contact-form_input .input {
-  width: 15rem;
+.input-container .input-subject {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.input-container .input-subject h1 {
+  width: 6rem;
+}
+.input-container .input-email {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.input-container .input-email h1 {
+  width: 6rem;
+}
+
+.input {
+  width: 100%;
   height: 2rem;
 }
-.contact-form_input .text {
-  min-width: 25rem;
-  max-width: 25rem;
+
+.text {
+  width: 100%;
   min-height: 15rem;
   max-height: 15rem;
+  resize: none;
 }
 
 .contact-text-container {
@@ -281,6 +464,7 @@ table {
   align-items: center;
   flex-direction: column;
   row-gap: 2rem;
+  z-index: -10;
 }
 .background-text-container .main-text {
   font-size: 10rem;
@@ -322,8 +506,13 @@ table {
   stroke-dashoffset: 1000;
   fill-opacity: 0;
 }
-.background-text-container .github-logo {
-  margin-top: -5rem;
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
 }
 
 .App {
@@ -349,7 +538,7 @@ html, body, .container, .panel {
   z-index: 20;
 }
 
-header {
+.header-container {
   width: 100vw;
   height: 4rem;
   display: flex;
@@ -358,10 +547,10 @@ header {
   align-items: center;
   position: fixed;
   z-index: 2;
-  background-color: #c9ccc9;
+  background-color: #a7a4e0;
   border: solid 2px black;
 }
-header .progress-container {
+.header-container .progress-container {
   width: 80%;
   height: 100%;
   display: flex;
@@ -369,12 +558,12 @@ header .progress-container {
   justify-content: space-between;
   align-items: center;
 }
-header button {
+.header-container button {
   width: 3rem;
   height: 3rem;
   border-style: none;
 }
-header .about_button {
+.header-container .about_button {
   width: 4rem;
   height: 4rem;
   background-image: url(/design_elements/Logo/AJ_logo_no_dot.svg);
@@ -382,15 +571,22 @@ header .about_button {
   background-position: center;
   background-repeat: no-repeat;
 }
-header .portfolio_button {
-  width: 3rem;
-  height: 3rem;
-  background-color: #514689;
+.header-container .portfolio_button {
+  width: 4rem;
+  height: 4rem;
 }
-header .contactForm_button {
+.header-container .portfolio_button .header-palette-icon {
+  position: relative;
+  top: 2px;
+  transform: rotate(200deg) scale(0.9);
+}
+.header-container .contactForm_button {
   width: 3rem;
   height: 3rem;
-  background-color: #514689;
+}
+.header-container .contactForm_button .header-person-icon {
+  position: relative;
+  right: 7%;
 }
 
 .progress-circle {
@@ -447,4 +643,14 @@ body::-webkit-scrollbar {
 
 .pin-spacer {
   display: none;
+}
+
+.display-button {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 100%;
+  justify-self: center;
+  align-self: center;
+  border: 3px solid black;
+  background-color: #a7a4e0;
 }/*# sourceMappingURL=stylesheet.css.map */

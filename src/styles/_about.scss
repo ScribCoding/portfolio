@@ -11,6 +11,7 @@
     align-items: center;
     flex-direction: column;
     row-gap: 2rem;
+    z-index: -10;
 
     .main-text{
         font-size: 10rem;
@@ -58,9 +59,7 @@
         stroke-dashoffset: 1000;
         fill-opacity: 0;
     }
-    .github-logo{
-        margin-top: -5rem;
-    }
+
 
 }
 

@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.c5ff02a5.css",
+    "main.js": "/portfolio/static/js/main.9122bc1e.js",
+    "static/media/MADE Canvas Black PERSONAL USE.otf": "/portfolio/static/media/MADE Canvas Black PERSONAL USE.529a22ea69e99a2e6a84.otf",
+    "static/media/fountain-pen-icon.svg": "/portfolio/static/media/fountain-pen-icon.a635cea5c987cef05e02.svg",
+    "static/media/AJ_logo_no_dot.svg": "/portfolio/static/media/AJ_logo_no_dot.1f7c46c8e03c006e2cd9.svg",
+    "static/media/paint-brush-icon.svg": "/portfolio/static/media/paint-brush-icon.e4ae6b8413edb8054b42.svg",
+    "static/media/icon_file_text_.svg": "/portfolio/static/media/icon_file_text_.1ad4b63bcf3791fbe552.svg",
+    "static/media/source_github_logo_.svg": "/portfolio/static/media/source_github_logo_.033dd9113e0bca64bab9.svg",
+    "static/media/pencil.svg": "/portfolio/static/media/pencil.8058c630cfbc7e427d62.svg",
+    "index.html": "/portfolio/index.html",
+    "static/media/x.svg": "/portfolio/static/media/x.1222f8bc061b5a9f62e3.svg",
+    "static/media/mail-icon.svg": "/portfolio/static/media/mail-icon.85eb66d2581031b1e096.svg",
+    "main.c5ff02a5.css.map": "/portfolio/static/css/main.c5ff02a5.css.map",
+    "main.9122bc1e.js.map": "/portfolio/static/js/main.9122bc1e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c5ff02a5.css",
+    "static/js/main.9122bc1e.js"
+  ]
+}

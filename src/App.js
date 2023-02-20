@@ -114,7 +114,7 @@ hiImAnim
         x: navEnd,
         ease: "none",
           scrollTrigger: {
-            markers: true,
+
             invalidateOnRefresh: true,
             containerAnimation: containerContext.data[0],
             trigger: document.querySelector(".one"),

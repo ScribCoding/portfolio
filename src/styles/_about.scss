@@ -1,4 +1,7 @@
-
+.about-name{
+    width: 100vw;
+    min-height: 100vh;
+}
 
 .background-text-container{
     width: 100%;
@@ -16,6 +19,7 @@
     .main-text{
         font-size: 10rem;
         color: #000000;
+        
     }
 
     .sub-text{
@@ -34,7 +38,7 @@
         
     }
     .name-text-container{
-        width: 100%;
+        width: 90vw;
     }
     .im-text-container{
         position: relative;

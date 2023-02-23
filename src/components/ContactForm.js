@@ -5,11 +5,15 @@ import DisplayButton from "./DisplayButton";
 const ContactForm = ({reference}) =>{
 
     let exitButton = () =>{
-        let emailContainer = document.getElementById("email-container")
-        if(emailContainer.classList.contains("visible")){
-            emailContainer.classList.toggle("visible")
-            emailContainer.classList.toggle("hidden")       
-        }
+        
+        let emailContainerTest = document.querySelectorAll(".email-container")
+
+            emailContainerTest.forEach(element => {
+                if(element.classList.contains("visible")){
+                    element.classList.toggle("visible")
+                    element.classList.toggle("hidden")       
+                }
+            });
     }
 
     return(
@@ -52,7 +56,7 @@ const ContactForm = ({reference}) =>{
                 <div className="contact-form-background"></div>
             </div>
             
-            <DisplayButton className="email-button" id="email-button" contentType="email"/>
+            <DisplayButton className="email-button" id="email-button-mobile" contentType="email"/>
 
             <div className="background-text-container">
                 <svg className="contact-text-container">

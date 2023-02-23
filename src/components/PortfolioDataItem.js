@@ -18,13 +18,13 @@ const PortfolioDataItem = (
                 </div>
 
                 <div className="data-item-buttons">
-                    <a href={pagesURL} target="_blank">
+                    <a href={pagesURL} target="_blank" rel="noreferrer">
                         <button className="webpage">
                             
                         </button>
                     </a>
 
-                    <a href={sourceURL} target="_blank">
+                    <a href={sourceURL} target="_blank" rel="noreferrer">
                         <button className="source-code">
                             
                         </button>

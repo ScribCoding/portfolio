@@ -6,22 +6,24 @@ const DisplayButton = ({className, id, contentType, content}) =>{
     function buttonFunction(contentType){
         
         if(contentType === "portfolio"){
-            
-            let portfolioList = document.getElementById(`portfolio-list-${content}`)
+            let portfolioList = document.querySelectorAll(`.portfolio-list-${content}`)
             console.log(portfolioList)
-            if(portfolioList.classList.contains("hidden")){
-                portfolioList.classList.toggle("hidden")
-                portfolioList.classList.toggle("visible")
-
-
-
-            }
+            portfolioList.forEach(element =>{
+                console.log(element)
+                if(element.classList.contains("hidden")){
+                    element.classList.toggle("hidden")
+                    element.classList.toggle("visible")
+                }
+            })
         } else if(contentType === "email") {
-            let emailContainer = document.getElementById("email-container")
-            if(emailContainer.classList.contains("hidden")){
-                emailContainer.classList.toggle("hidden")
-                emailContainer.classList.toggle("visible")
-            }
+            let emailContainerTest = document.querySelectorAll(".email-container")
+
+            emailContainerTest.forEach(element => {
+                if(element.classList.contains("hidden")){
+                    element.classList.toggle("hidden")
+                    element.classList.toggle("visible")
+                }
+            });
         }
 }
 

@@ -13,7 +13,7 @@ const About = ({reference}) =>{
 
         <svg className="name-text-container">
             <text className="main-text" textAnchor="middle" x="50%" y="110" fill="#000000" stroke="#000000" strokeWidth="2">
-          <tspan className="tp name">Arshaaq Jiffry</tspan>
+          <tspan className="tp name">Arshaaq</tspan>
             </text>
             
         </svg>

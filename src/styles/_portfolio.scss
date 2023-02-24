@@ -68,8 +68,8 @@
         
         height: 50vh;
         z-index: 3;
-        max-width: 80vw;
-        min-width: 80vw;
+        max-width: 20rem;
+        min-width: 90vw;
         min-height: 20rem;
         
 
@@ -155,7 +155,7 @@
                overflow: hidden;
     
                .data-item-name{
-                font-size: 5vw;
+                font-size: 2rem;
                 grid-area: names;
                 width: 100%;
                 display: flex;

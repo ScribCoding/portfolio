@@ -176,24 +176,9 @@ portfolioTextAnim
 },portfolio_container.current)
 //-----------------------Portfolio Context----------------------------------------------//
 
-let form = gsap.utils.toArray(contactForm_container.current.children[0]);
+
 
 let contactFormContext = gsap.context(()=>{
-// let contactFormAnim = gsap.from(form,{
-//   y: 100,
-//   opacity: 0,
-//   duration: 0.5,
-//   ease: "back",
-//   stagger: {
-//    each: 0.1,
-//    from: "start",
-//   },
-//   scrollTrigger: {
-//     containerAnimation: containerContext.data[0],
-//     trigger: contactForm_container.current,
-//   }
-// });
-
 let contactFormTextAnim = gsap.timeline(
   {     
     scrollTrigger: {
@@ -208,9 +193,9 @@ let contactFormTextAnim = gsap.timeline(
   );
 contactFormTextAnim
 .to(".contact",  {strokeDashoffset:"0", duration:"2" }, )
-.to(".form",  {strokeDashoffset:"0", duration:"2" }, "<" )
+.to(".me",  {strokeDashoffset:"0", duration:"2" }, "<" )
 .to(".contact",  {fillOpacity: 1, strokeOpacity: 0}, )
-.to(".form",  {fillOpacity: 1, strokeOpacity: 0}, "<" )
+.to(".me",  {fillOpacity: 1, strokeOpacity: 0}, "<" )
 //background-text associated with portfolio panel  
 
 

@@ -19,8 +19,8 @@
     .email-box{
         height: 30rem;
         z-index: 3;
-        max-width: 80vw;
-        min-width: 80vw;
+        max-width: 20rem;
+        min-width: 90vw;
         min-height: 30rem;
         z-index: 3;
     }
@@ -214,14 +214,14 @@
 
 }
 
-.form-text-container{
+.me-text-container{
     position: relative;
     width: 100vw;
-        align-self: flex-start;
-        font-size: 20vw;     
+    align-self: flex-start;
+    font-size: 20vw;     
         
 
-        overflow: visible;
+    overflow: visible;
 }
 
 .contact{
@@ -230,7 +230,7 @@
     fill-opacity: 0;
 }
 
-.form{
+.me{
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
     fill-opacity: 0;

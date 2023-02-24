@@ -65,9 +65,9 @@ const ContactForm = ({reference}) =>{
                     </text>
                 </svg>
 
-                <svg className="form-text-container">
+                <svg className="me-text-container">
                     <text className="sub-text" x="0" y="100%" fill="" stroke="#000000" strokeWidth="2">
-                <tspan className="tp form">form</tspan>
+                <tspan className="tp me">me</tspan>
                     </text>
                 </svg>
             </div>

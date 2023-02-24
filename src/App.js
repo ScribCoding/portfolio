@@ -11,7 +11,6 @@ import ContactForm from './components/ContactForm';
 import About from './components/About';
 
 import OverallScroll from './components/OverallScroll';
-import OverallScrollMobile from './components/OverallScrollMobile';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 

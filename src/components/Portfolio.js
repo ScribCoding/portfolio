@@ -60,9 +60,9 @@ const Portfolio = ({reference, data}) =>{
 
     return(
         <section className="portfolio-container" ref={reference}>
-            <PortfolioList content={dataArrayElementsGeneral} id="portfolio-list-general"/>
-            <PortfolioList content={dataArrayElementsCSS} id="portfolio-list-css"/>
-            <PortfolioList content={dataArrayElementsJavascript} id="portfolio-list-javascript"/>
+            <PortfolioList content={dataArrayElementsGeneral} id="portfolio-list-general" heading={"General"}/>
+            <PortfolioList content={dataArrayElementsCSS} id="portfolio-list-css" heading={"CSS"}/>
+            <PortfolioList content={dataArrayElementsJavascript} id="portfolio-list-javascript" heading={"Javascript"}/>
 
             <div className="portfolio-items">
                 <DisplayButton className="javascript" id="javascript" contentType={"portfolio"} content="javascript"/>

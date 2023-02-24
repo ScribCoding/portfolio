@@ -1,6 +1,6 @@
 
 
-const PortfolioList = ({content, id}) =>{ 
+const PortfolioList = ({content, id, heading}) =>{ 
 
   let exitButton = () =>{
     let portfolioLists = document.querySelectorAll(".portfolio-list-container")
@@ -28,7 +28,7 @@ const PortfolioList = ({content, id}) =>{
        <div className="portfolio-list">
         <header className="portfolio-list-header">
 
-        <h1>Projects</h1>
+        <h1>{heading}</h1>
         <button className="portfolio-header-exit-button" id="portfolio-header-exit-button" onClick={exitButton}></button>
         </header>
         <div className="portfolio-list-content">

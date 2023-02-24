@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.271abfac.css",
-    "main.js": "/portfolio/static/js/main.33747dc2.js",
+    "main.css": "/portfolio/static/css/main.ca93bc24.css",
+    "main.js": "/portfolio/static/js/main.50c20cc5.js",
     "static/media/MADE Canvas Black PERSONAL USE.otf": "/portfolio/static/media/MADE Canvas Black PERSONAL USE.529a22ea69e99a2e6a84.otf",
     "static/media/fountain-pen-icon.svg": "/portfolio/static/media/fountain-pen-icon.a635cea5c987cef05e02.svg",
     "static/media/AJ_logo_no_dot.svg": "/portfolio/static/media/AJ_logo_no_dot.1f7c46c8e03c006e2cd9.svg",
@@ -12,11 +12,11 @@
     "index.html": "/portfolio/index.html",
     "static/media/x.svg": "/portfolio/static/media/x.1222f8bc061b5a9f62e3.svg",
     "static/media/mail-icon.svg": "/portfolio/static/media/mail-icon.85eb66d2581031b1e096.svg",
-    "main.271abfac.css.map": "/portfolio/static/css/main.271abfac.css.map",
-    "main.33747dc2.js.map": "/portfolio/static/js/main.33747dc2.js.map"
+    "main.ca93bc24.css.map": "/portfolio/static/css/main.ca93bc24.css.map",
+    "main.50c20cc5.js.map": "/portfolio/static/js/main.50c20cc5.js.map"
   },
   "entrypoints": [
-    "static/css/main.271abfac.css",
-    "static/js/main.33747dc2.js"
+    "static/css/main.ca93bc24.css",
+    "static/js/main.50c20cc5.js"
   ]
 }

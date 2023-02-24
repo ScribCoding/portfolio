@@ -27,7 +27,7 @@ function App() {
     <div className="App">
       <div id="body">
         <OverallScroll/>
-        <OverallScrollMobile/>
+        
       </div>
     </div>
   );

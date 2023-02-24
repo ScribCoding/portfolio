@@ -60,7 +60,7 @@ const ContactForm = ({reference}) =>{
 
             <div className="background-text-container">
                 <svg className="contact-text-container">
-                    <text className="sub-text" x="0" y="100%" fill="" stroke="#000000" strokeWidth="2">
+                    <text className="sub-text" x="" y="100%" fill="" stroke="#000000" strokeWidth="2">
                 <tspan className="tp contact">contact</tspan>
                     </text>
                 </svg>

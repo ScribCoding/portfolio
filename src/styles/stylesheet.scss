@@ -29,14 +29,41 @@ button{
 }
 
 .App{
-    width: 100%;
-    height: 100vh;
+    position: relative;
+    width: 100vw;
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: lavenderblush;
+}
+
+.scroll-mobile{
+    display: flex;
 }
 
 html, body, .container, .panel{
     max-height: 100vh;
 
     
+}
+
+.container-mobile{
+    overflow: hidden;
+    width: 100vw;
+    min-height: 300vh;
+    display: flex;
+    flex-direction: column;
+    
+    .panel-mobile{
+        width: 100vw;
+        height: 100vh;
+        font-weight: 700;
+        font-size: 1.5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
 }
 
 .name_animation_container{
@@ -177,58 +204,16 @@ background-color: variables.$shaaq-tertiary;
 }
 
 .display-button{
-    width: 12rem;
-    height: 12rem;
+    width: 20vw;
+    height: 20vw;
 
     border-radius: 100%;
     justify-self: center;
     align-self: center;
     border: 3px solid black;
     background-color: variables.$shaaq-light_purple;
+    background-repeat: no-repeat;
    
 }
 
-@media only screen and (max-width: 1000px) {
 
-    .App{
-        position: relative;
-        width: 100vw;
-        max-width: 100vw;
-        min-height: 400vh;
-        overflow: hidden;
-        background-color: lavenderblush;
-    }
-
-    
-
-    .scroll {
-       display: none;
-    }
-
-    .scroll-mobile{
-        display: flex;
-    }
-
-    .container-mobile{
-        overflow: hidden;
-        width: 100vw;
-        min-height: 300vh;
-        display: flex;
-        flex-direction: column;
-        
-        .panel-mobile{
-            width: 100vw;
-            height: 100vh;
-            font-weight: 700;
-            font-size: 1.5em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        
-        }
-    }
-
-    
-
-    
-  }

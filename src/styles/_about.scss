@@ -31,6 +31,15 @@
     }
 
 
+    .scroll-down-container{
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding-bottom: 5%;
+    }
 
     .hi-text-container{
         align-self: flex-start;

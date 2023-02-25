@@ -24,6 +24,10 @@ const About = ({reference}) =>{
             </text>
         </svg>
 
+          <div className="scroll-down-container">
+              <p className="scroll-down-text">scroll down!</p>
+          </div>
+
 
         </section>
 )

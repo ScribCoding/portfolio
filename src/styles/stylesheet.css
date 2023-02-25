@@ -484,6 +484,15 @@ table {
   font-size: 20vw;
   color: #000000;
 }
+.background-text-container .scroll-down-container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 5%;
+}
 .background-text-container .hi-text-container {
   align-self: flex-start;
   position: relative;

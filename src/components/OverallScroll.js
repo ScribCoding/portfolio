@@ -55,6 +55,13 @@ document.querySelector(".portfolio_button").addEventListener("click",scrollToPor
 document.querySelector(".contactForm_button").addEventListener("click",scrollToContact);
 //--------------header button events-------------------------//
 
+let scrollDownAnim = gsap.timeline({
+})
+
+scrollDownAnim
+.from(".scroll-down-container",  {y:"100", opacity: 0}, "-=1")
+.to(".scroll-down-container",  {y:"0", opacity: 1})
+
 let hiImAnim = gsap.timeline();
 hiImAnim
 .to(".hi",  {strokeDashoffset:"0", duration: "0.5"}, )
@@ -63,6 +70,9 @@ hiImAnim
 .to(".im",  {strokeDashoffset:"-1000", delay:"0.5"}, )
 .to(".name",  {strokeDashoffset:"0", duration: "3"} )
 .to(".name",  { fillOpacity: 1, strokeOpacity: 0},"-=2" )
+.add(scrollDownAnim,"-=1")
+
+
 
 //-----------------gsap about animations-------------------------------//
 

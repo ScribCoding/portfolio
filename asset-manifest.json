@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.a5823b45.css",
+    "main.css": "/portfolio/static/css/main.ccdbb5dd.css",
     "main.js": "/portfolio/static/js/main.6dca3c15.js",
     "static/media/MADE Canvas Black PERSONAL USE.otf": "/portfolio/static/media/MADE Canvas Black PERSONAL USE.529a22ea69e99a2e6a84.otf",
     "static/media/fountain-pen-icon.svg": "/portfolio/static/media/fountain-pen-icon.a635cea5c987cef05e02.svg",
@@ -12,11 +12,11 @@
     "index.html": "/portfolio/index.html",
     "static/media/x.svg": "/portfolio/static/media/x.1222f8bc061b5a9f62e3.svg",
     "static/media/mail-icon.svg": "/portfolio/static/media/mail-icon.85eb66d2581031b1e096.svg",
-    "main.a5823b45.css.map": "/portfolio/static/css/main.a5823b45.css.map",
+    "main.ccdbb5dd.css.map": "/portfolio/static/css/main.ccdbb5dd.css.map",
     "main.6dca3c15.js.map": "/portfolio/static/js/main.6dca3c15.js.map"
   },
   "entrypoints": [
-    "static/css/main.a5823b45.css",
+    "static/css/main.ccdbb5dd.css",
     "static/js/main.6dca3c15.js"
   ]
 }

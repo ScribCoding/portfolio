@@ -732,9 +732,9 @@ body::-webkit-scrollbar {
     font-size: 10rem;
   }
   .portfolio-list-container .portfolio-list {
-    min-width: 70rem;
+    min-width: 60rem;
   }
   .contact-form_container .email-box {
-    min-width: 70rem;
+    min-width: 60rem;
   }
 }/*# sourceMappingURL=stylesheet.css.map */
